@@ -40,13 +40,15 @@ RUN apk add --no-cache \
 RUN pecl install \
     redis \
     imagick \
-    xdebug
+    xdebug \
+    mongodb
 
 # Enable PECL and PEAR extensions
 RUN docker-php-ext-enable \
     redis \
     imagick \
-    xdebug
+    xdebug \
+    mongodb
 
 # Configure php extensions
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg
